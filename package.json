@@ -1,0 +1,26 @@
+{
+  "name": "toggle-compose",
+  "version": "1.0.0",
+  "private": true,
+  "license": "MIT",
+  "homepage": "https://github.com/DamilolaAlao/toggle-compose",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DamilolaAlao/toggle-compose.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DamilolaAlao/toggle-compose/issues"
+  },
+  "type": "module",
+  "description": "OCI container registry with a Docker Hub-style console. Image blobs are stored in Cloudflare R2.",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node scripts/smoke.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.930.0"
+  }
+}

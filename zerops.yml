@@ -1,0 +1,22 @@
+zerops:
+  - setup: toggle
+    build:
+      base: nodejs@22
+      buildCommands:
+        - npm ci
+      deployFiles:
+        - package.json
+        - package-lock.json
+        - node_modules
+        - src
+        - public
+    run:
+      base: nodejs@22
+      ports:
+        - port: 8080
+          httpSupport: true
+      start: npm start
+      envVariables:
+        PORT: "8080"
+        TOGGLE_GC_GRACE_MS: "600000"
+        TOGGLE_MAX_BODY: "536870912"

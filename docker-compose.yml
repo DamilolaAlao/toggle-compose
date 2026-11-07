@@ -1,0 +1,14 @@
+services:
+  toggle:
+    build: .
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: "8080"
+      R2_ACCOUNT_ID: ${R2_ACCOUNT_ID:?set R2_ACCOUNT_ID}
+      R2_ACCESS_KEY_ID: ${R2_ACCESS_KEY_ID:?set R2_ACCESS_KEY_ID}
+      R2_SECRET_ACCESS_KEY: ${R2_SECRET_ACCESS_KEY:?set R2_SECRET_ACCESS_KEY}
+      R2_BUCKET: ${R2_BUCKET:-toggle}
+      R2_ENDPOINT: ${R2_ENDPOINT:-}
+      TOGGLE_GC_GRACE_MS: ${TOGGLE_GC_GRACE_MS:-600000}
+      TOGGLE_MAX_BODY: ${TOGGLE_MAX_BODY:-536870912}
